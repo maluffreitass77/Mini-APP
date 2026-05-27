@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 
 import { ref } from 'vue'
 
@@ -44,7 +44,7 @@ function adicionarTarefa() {
 
 }
 
-function abrirDetalhe(index: number) {
+function abrirDetalhe(index) {
 
   router.push(
     `/tabs/detalhe/${index}`
