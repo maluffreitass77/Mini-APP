@@ -7,3 +7,26 @@
 --ion-color-primary-tint: #7b73ff;
 
 }
+ion-content {
+
+  --background: #f4f5f8;
+
+}
+
+ion-card {
+
+  border-radius: 20px;
+
+}
+
+ion-button {
+
+  --border-radius: 12px;
+
+}
+
+h2 {
+
+  font-weight: bold;
+
+}

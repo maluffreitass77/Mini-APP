@@ -2,6 +2,9 @@
 
 import { ref }
 from 'vue'
+import { usuario }
+from '../data/user'
+
 
 import {
 
@@ -24,7 +27,7 @@ const nome = ref('')
 async function salvar() {
 
   if (!nome.value.trim()) {
-
+    usuario.nome = nome.value
     const toast = await toastController.create({
 
       message: 'Digite seu nome',

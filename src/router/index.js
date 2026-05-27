@@ -1,3 +1,5 @@
+import { usuario }
+from '../data/user'
 import {
 
   createRouter,
@@ -41,6 +43,26 @@ const routes = [
 
         component: () =>
           import('../views/DetalhePage.vue')
+      }
+      { path: 'privado',
+
+  component: () =>
+    import('../views/PrivadoPage.vue'),
+
+  beforeEnter: (to, from, next) => {
+
+    if (usuario.nome) {
+
+      next()
+
+    } else {
+
+      alert(
+        'Digite seu nome no perfil primeiro'
+      )
+
+      next('/tabs/perfil')
+
       }
 
     ]
