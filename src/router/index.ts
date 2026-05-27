@@ -5,7 +5,48 @@ import {
 
 } from '@ionic/vue-router'
 
-const routes = []
+import TabsPage
+from '../views/TabsPage.vue'
+
+const routes = [
+
+  {
+    path: '/',
+    redirect: '/tabs/tarefas'
+  },
+
+  {
+    path: '/tabs',
+
+    component: TabsPage,
+
+    children: [
+
+      {
+        path: 'tarefas',
+
+        component: () =>
+          import('../views/TarefasPage.vue')
+      },
+
+      {
+        path: 'perfil',
+
+        component: () =>
+          import('../views/PerfilPage.vue')
+      },
+
+      {
+        path: 'detalhe/:id',
+
+        component: () =>
+          import('../views/DetalhePage.vue')
+      }
+
+    ]
+  }
+
+]
 
 const router = createRouter({
 
