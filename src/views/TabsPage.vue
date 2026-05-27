@@ -33,20 +33,7 @@
           </IonLabel>
 
         </IonTabButton>
-        <IonTabButton
-  tab="privado"
-  href="/tabs/privado"
->
-
-  <IonIcon
-    :icon="lockClosedOutline"
-  />
-
-  <IonLabel>
-    Privado
-  </IonLabel>
-
-</IonTabButton>
+       
 
       </IonTabBar>
 

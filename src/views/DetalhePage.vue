@@ -1,5 +1,7 @@
 <script setup>
-
+ionRouter.canGoBack()
+ionRouter.back()
+ionRouter.replace('/tabs/tarefas')
 import {
 
   IonPage,
