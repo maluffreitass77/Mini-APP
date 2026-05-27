@@ -1,6 +1,7 @@
 <script setup>
 
-import { ref } from 'vue'
+import { ref }
+from 'vue'
 
 import {
 
@@ -11,11 +12,48 @@ import {
   IonTitle,
   IonContent,
 
-  IonInput
+  IonInput,
+  IonButton,
+
+  toastController
 
 } from '@ionic/vue'
 
 const nome = ref('')
+
+async function salvar() {
+
+  if (!nome.value.trim()) {
+
+    const toast = await toastController.create({
+
+      message: 'Digite seu nome',
+
+      duration: 2000,
+
+      color: 'warning'
+
+    })
+
+    await toast.present()
+
+    return
+
+  }
+
+  const toast = await toastController.create({
+
+    message: 'Perfil salvo!',
+
+    duration: 2000,
+
+    color: 'success'
+
+  })
+
+  await toast.present()
+
+}
 
 </script>
 
@@ -25,7 +63,7 @@ const nome = ref('')
 
     <IonHeader>
 
-      <IonToolbar>
+      <IonToolbar color="tertiary">
 
         <IonTitle>
           Perfil
@@ -38,9 +76,27 @@ const nome = ref('')
     <IonContent class="ion-padding">
 
       <IonInput
+
         v-model="nome"
+
         placeholder="Digite seu nome"
+
+        fill="outline"
+
       />
+
+      <IonButton
+
+        expand="block"
+
+        class="ion-margin-top"
+
+        @click="salvar"
+      >
+
+        Salvar
+
+      </IonButton>
 
     </IonContent>
 

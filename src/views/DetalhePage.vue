@@ -7,7 +7,10 @@ import {
   IonToolbar,
 
   IonTitle,
-  IonContent
+  IonContent,
+
+  IonCard,
+  IonCardContent
 
 } from '@ionic/vue'
 
@@ -26,10 +29,10 @@ const id = route.params.id
 
     <IonHeader>
 
-      <IonToolbar>
+      <IonToolbar color="success">
 
         <IonTitle>
-          Detalhe
+          Detalhes
         </IonTitle>
 
       </IonToolbar>
@@ -38,10 +41,20 @@ const id = route.params.id
 
     <IonContent class="ion-padding">
 
-      <h2>
-        Tarefa ID:
-        {{ id }}
-      </h2>
+      <IonCard>
+
+        <IonCardContent>
+
+          <h2>
+
+            Tarefa selecionada:
+            {{ id }}
+
+          </h2>
+
+        </IonCardContent>
+
+      </IonCard>
 
     </IonContent>
 
